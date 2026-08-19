@@ -3,29 +3,29 @@ const DATA = {
     SIMPLE: {
       name: "Past Simple",
       formula: "V²",
-      example: "Bjorn opened the door.",
-      translation: "Бьйорн открыл дверь.",
+      example: "Bjorn and Dima walked in the forest yesterday.",
+      translation: "Вчера Бьйорн и Дима гуляли в лесу.",
       description: "A finished action that happened in the past."
     },
     CONTINUOUS: {
       name: "Past Continuous",
       formula: "was / were + V-ing",
-      example: "Bjorn was waiting for me.",
-      translation: "Бьйорн ждал меня.",
+      example: "Bjorn and Dima were walking when it started to rain.",
+      translation: "Бьйорн и Дима гуляли, когда начался дождь.",
       description: "An action that was in progress at a particular moment in the past."
     },
     PERFECT: {
       name: "Past Perfect",
       formula: "had + V³",
-      example: "Bjorn had left before I arrived.",
-      translation: "Бьйорн ушёл до того, как я пришёл.",
+      example: "Bjorn and Dima had already walked before I woke up.",
+      translation: "Бьйорн и Дима уже погуляли до того, как я проснулась.",
       description: "An action completed before another event in the past."
     },
     "PERFECT CONTINUOUS": {
       name: "Past Perfect Continuous",
       formula: "had been + V-ing",
-      example: "Bjorn had been waiting for an hour when I arrived.",
-      translation: "Бьйорн ждал уже час, когда я пришёл.",
+      example: "Bjorn and Dima had been walking for an hour when I called them.",
+      translation: "Бьйорн и Дима гуляли уже час, когда я им позвонила.",
       description: "An ongoing action that continued for a period before a past moment."
     }
   },
@@ -41,22 +41,22 @@ const DATA = {
     CONTINUOUS: {
       name: "Present Continuous",
       formula: "am / is / are + V-ing",
-      example: "Bjorn is waiting for me.",
-      translation: "Бьйорн ждёт меня.",
+      example: "Bjorn and Dima are walking right now.",
+      translation: "Бьйорн и Дима гуляют прямо сейчас.",
       description: "An action happening now or around the present moment."
     },
     PERFECT: {
       name: "Present Perfect",
       formula: "have / has + V³",
-      example: "Bjorn has already left.",
-      translation: "Бьйорн уже ушёл.",
+      example: "Bjorn and Dima have already walked today.",
+      translation: "Бьйорн и Дима уже погуляли сегодня.",
       description: "A past action whose result or experience matters now."
     },
     "PERFECT CONTINUOUS": {
       name: "Present Perfect Continuous",
       formula: "have / has been + V-ing",
-      example: "Bjorn has been waiting for two hours.",
-      translation: "Бьйорн ждёт уже два часа.",
+      example: "Bjorn and Dima have been walking for two hours.",
+      translation: "Бьйорн и Дима гуляют уже два часа.",
       description: "An action that started earlier and has continued up to now."
     }
   },
@@ -65,29 +65,29 @@ const DATA = {
     SIMPLE: {
       name: "Future Simple",
       formula: "will + V",
-      example: "Bjorn will come back tomorrow.",
-      translation: "Бьйорн вернётся завтра.",
+      example: "Bjorn and Dima will walk tomorrow.",
+      translation: "Бьйорн и Дима пойдут гулять завтра.",
       description: "A future action, prediction, promise, or decision."
     },
     CONTINUOUS: {
       name: "Future Continuous",
       formula: "will be + V-ing",
-      example: "Bjorn will be waiting for me at eight.",
-      translation: "В восемь Бьйорн будет ждать меня.",
+      example: "Bjorn and Dima will be walking at eight.",
+      translation: "В восемь Бьйорн и Дима будут гулять.",
       description: "An action that will be in progress at a particular future moment."
     },
     PERFECT: {
       name: "Future Perfect",
       formula: "will have + V³",
-      example: "Bjorn will have finished by tomorrow.",
-      translation: "К завтрашнему дню Бьйорн уже закончит.",
+      example: "Bjorn and Dima will have walked by the evening.",
+      translation: "К вечеру Бьйорн и Дима уже погуляют.",
       description: "An action that will be completed before a point in the future."
     },
     "PERFECT CONTINUOUS": {
       name: "Future Perfect Continuous",
       formula: "will have been + V-ing",
-      example: "By midnight, Bjorn will have been working for twelve hours.",
-      translation: "К полуночи Бьйорн будет работать уже двенадцать часов.",
+      example: "By midnight, Bjorn and Dima will have been walking for twelve hours.",
+      translation: "К полуночи Бьйорн и Дима будут гулять уже двенадцать часов.",
       description: "An action that will have continued for a duration up to a future point."
     }
   }
