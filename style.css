@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #130f0d;              /* Nuln Oil */
-  --panel: #221113;           /* Тёмная подложка панелей */
-  --panel2: #2d1618;          /* Кнопки и контролы */
-  --text: #f5f3ed;            /* Светлый читаемый текст */
-  --soft: #c4c1b8;            /* Baby Barn Owl */
-  --muted: #9e9589;           /* Читаемый Intrigue */
+  --bg: #130f0d;              /* Основной фон (Nuln Oil) */
+  --panel: #261113;           /* Тёмная подложка панелей */
+  --panel2: #301415;          /* Кнопки и карточки (Seal Brown) */
+  --text: #e8e6e1;            /* Светлый текст (Baby Barn Owl) */
+  --soft: #c4c1b8;            /* Второстепенный текст */
+  --muted: #9e9589;           /* Мелкие надписи (Intrigue, чуть осветленный) */
   --line: rgba(196, 193, 184, 0.12);
   --line2: rgba(196, 193, 184, 0.22);
-  --accent: #a63a42;          /* Яркий Burnt Crimson */
+  --accent: #a63a42;          /* Акцентный цвет (Burnt Crimson, яркий) */
   --accent-soft: rgba(166, 58, 66, 0.2);
   --accent-glow: rgba(166, 58, 66, 0.45);
 }
@@ -19,15 +19,16 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background-color: var(--bg);
+  background-color: var(--bg); /* Надёжный фолбэк цвета фона */
 }
 
 body {
   min-height: 100vh;
-  background:
+  /* Разделяем градиенты и цвет, чтобы парсер браузера не ошибался */
+  background-image:
     radial-gradient(circle at 20% 20%, rgba(166, 58, 66, 0.12), transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(196, 193, 184, 0.04), transparent 40%),
-    var(--bg);
+    radial-gradient(circle at 85% 75%, rgba(196, 193, 184, 0.04), transparent 40%);
+  background-color: var(--bg);
   color: var(--text);
   font-family: Manrope, system-ui, sans-serif;
 }
@@ -160,7 +161,7 @@ h1 {
   padding: 0;
   border: 2px solid var(--line2);
   border-radius: 50%;
-  background: var(--panel);
+  background: var(--panel2);
   color: transparent;
   cursor: pointer;
   box-shadow: 0 0 0 5px var(--panel);
