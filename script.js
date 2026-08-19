@@ -5,36 +5,28 @@ const DATA = {
       formula: "V²",
       example: "Bjorn opened the door.",
       translation: "Бьйорн открыл дверь.",
-      description: "A finished action that happened in the past.",
-      scene: "A MOMENT AGO",
-      pose: "past"
+      description: "A finished action that happened in the past."
     },
     CONTINUOUS: {
       name: "Past Continuous",
       formula: "was / were + V-ing",
       example: "Bjorn was waiting for me.",
       translation: "Бьйорн ждал меня.",
-      description: "An action that was in progress at a particular moment in the past.",
-      scene: "WHILE I ARRIVED",
-      pose: "waiting"
+      description: "An action that was in progress at a particular moment in the past."
     },
     PERFECT: {
       name: "Past Perfect",
       formula: "had + V³",
       example: "Bjorn had left before I arrived.",
       translation: "Бьйорн ушёл до того, как я пришёл.",
-      description: "An action completed before another event in the past.",
-      scene: "ALREADY GONE",
-      pose: "gone"
+      description: "An action completed before another event in the past."
     },
     "PERFECT CONTINUOUS": {
       name: "Past Perfect Continuous",
       formula: "had been + V-ing",
       example: "Bjorn had been waiting for an hour when I arrived.",
       translation: "Бьйорн ждал уже час, когда я пришёл.",
-      description: "An ongoing action that continued for a period before a past moment.",
-      scene: "FOR ONE HOUR",
-      pose: "tired"
+      description: "An ongoing action that continued for a period before a past moment."
     }
   },
 
@@ -42,38 +34,30 @@ const DATA = {
     SIMPLE: {
       name: "Present Simple",
       formula: "V / V-s",
-      example: "Bjorn lives near the forest.",
-      translation: "Бьйорн живёт возле леса.",
-      description: "A fact, habit, or something that is generally true.",
-      scene: "EVERY EVENING",
-      pose: "normal"
+      example: "Bjorn and Dima walk every day.",
+      translation: "Бьйорн и Дима гуляют каждый день.",
+      description: "A fact, habit, or something that is generally true."
     },
     CONTINUOUS: {
       name: "Present Continuous",
       formula: "am / is / are + V-ing",
       example: "Bjorn is waiting for me.",
       translation: "Бьйорн ждёт меня.",
-      description: "An action happening now or around the present moment.",
-      scene: "RIGHT NOW",
-      pose: "waiting"
+      description: "An action happening now or around the present moment."
     },
     PERFECT: {
       name: "Present Perfect",
       formula: "have / has + V³",
       example: "Bjorn has already left.",
       translation: "Бьйорн уже ушёл.",
-      description: "A past action whose result or experience matters now.",
-      scene: "RESULT: EMPTY",
-      pose: "gone"
+      description: "A past action whose result or experience matters now."
     },
     "PERFECT CONTINUOUS": {
       name: "Present Perfect Continuous",
       formula: "have / has been + V-ing",
       example: "Bjorn has been waiting for two hours.",
       translation: "Бьйорн ждёт уже два часа.",
-      description: "An action that started earlier and has continued up to now.",
-      scene: "02:00 / STILL WAITING",
-      pose: "tired"
+      description: "An action that started earlier and has continued up to now."
     }
   },
 
@@ -83,36 +67,28 @@ const DATA = {
       formula: "will + V",
       example: "Bjorn will come back tomorrow.",
       translation: "Бьйорн вернётся завтра.",
-      description: "A future action, prediction, promise, or decision.",
-      scene: "TOMORROW",
-      pose: "future"
+      description: "A future action, prediction, promise, or decision."
     },
     CONTINUOUS: {
       name: "Future Continuous",
       formula: "will be + V-ing",
       example: "Bjorn will be waiting for me at eight.",
       translation: "В восемь Бьйорн будет ждать меня.",
-      description: "An action that will be in progress at a particular future moment.",
-      scene: "AT 08:00",
-      pose: "waiting"
+      description: "An action that will be in progress at a particular future moment."
     },
     PERFECT: {
       name: "Future Perfect",
       formula: "will have + V³",
       example: "Bjorn will have finished by tomorrow.",
       translation: "К завтрашнему дню Бьйорн уже закончит.",
-      description: "An action that will be completed before a point in the future.",
-      scene: "BY TOMORROW",
-      pose: "future"
+      description: "An action that will be completed before a point in the future."
     },
     "PERFECT CONTINUOUS": {
       name: "Future Perfect Continuous",
       formula: "will have been + V-ing",
       example: "By midnight, Bjorn will have been working for twelve hours.",
       translation: "К полуночи Бьйорн будет работать уже двенадцать часов.",
-      description: "An action that will have continued for a duration up to a future point.",
-      scene: "12 HOURS LATER",
-      pose: "tired"
+      description: "An action that will have continued for a duration up to a future point."
     }
   }
 };
@@ -134,8 +110,6 @@ const formula = document.getElementById("formula");
 const example = document.getElementById("example");
 const translation = document.getElementById("translation");
 const description = document.getElementById("description");
-const sceneCaption = document.getElementById("sceneCaption");
-const bjorn = document.getElementById("bjorn");
 const infoContent = document.querySelector(".info-content");
 
 const flatOrder = [];
@@ -157,9 +131,8 @@ function positionMarker() {
   }[currentTime];
 
   stationMarker.style.left = `${timeX}%`;
-  stationMarker.style.top = `$25%`;
+  stationMarker.style.top = `25%`; // Исправлена опечатка
 
-  // The horizontal glow travels toward the selected time.
   const glowWidth = Math.max(5, timeX - 10);
   document.getElementById("lineGlow").style.width = `${glowWidth}%`;
 }
@@ -172,11 +145,6 @@ function updateButtons() {
   aspectButtons.forEach(button => {
     button.classList.toggle("active", button.dataset.aspect === currentAspect);
   });
-}
-
-function updateScene(pose) {
-  bjorn.className = "bjorn";
-  bjorn.classList.add(`pose-${pose}`);
 }
 
 function render(animate = true) {
@@ -197,11 +165,9 @@ function render(animate = true) {
   example.textContent = item.example;
   translation.textContent = item.translation;
   description.textContent = item.description;
-  sceneCaption.textContent = item.scene;
 
   updateButtons();
   positionMarker();
-  updateScene(item.pose);
 }
 
 function choose(time, aspect) {
