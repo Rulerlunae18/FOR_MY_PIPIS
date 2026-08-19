@@ -11,51 +11,96 @@
     <header class="topbar">
       <div>
         <p class="eyebrow">ENGLISH TIME MACHINE</p>
-        <h1>Where is Bjorn?</h1>
+        <h1>When is Bjorn?</h1>
       </div>
-      <div class="hint">Drag the point · Release to lock</div>
+      <p class="hint">Choose WHEN → choose HOW</p>
     </header>
 
     <section class="machine">
-      <div class="plane-wrap">
-        <div class="plane" id="plane" aria-label="English tense coordinate plane">
-          <div class="grid"></div>
+      <div class="timeline-panel">
+        <div class="panel-head">
+          <span>WHEN?</span>
+          <span id="selectionLabel">PRESENT · SIMPLE</span>
+        </div>
 
-          <div class="axis axis-x"></div>
-          <div class="axis axis-y"></div>
+        <div class="timeline" id="timeline">
+          <div class="line-bg"></div>
+          <div class="line-glow" id="lineGlow"></div>
 
-          <div class="axis-label label-past">PAST</div>
-          <div class="axis-label label-present">PRESENT</div>
-          <div class="axis-label label-future">FUTURE</div>
+          <div class="time-column past">
+            <button class="time-node" data-time="PAST" aria-label="Past">●</button>
+            <div class="time-name">PAST</div>
+          </div>
 
-          <div class="mode-label mode-simple">SIMPLE</div>
-          <div class="mode-label mode-continuous">CONTINUOUS</div>
-          <div class="mode-label mode-perfect">PERFECT</div>
-          <div class="mode-label mode-perfect-continuous">PERFECT<br>CONTINUOUS</div>
+          <div class="time-column present">
+            <button class="time-node active" data-time="PRESENT" aria-label="Present">●</button>
+            <div class="time-name">PRESENT</div>
+          </div>
 
-          <div class="crosshair" id="crosshair"></div>
-          <button class="orb" id="orb" aria-label="Tense selector">
-            <span></span>
-          </button>
+          <div class="time-column future">
+            <button class="time-node" data-time="FUTURE" aria-label="Future">●</button>
+            <div class="time-name">FUTURE</div>
+          </div>
 
-          <div class="coordinate-readout" id="coordinateReadout">PRESENT · SIMPLE</div>
+          <div class="how-section">
+            <p class="how-title">HOW?</p>
+            <div class="aspect-list">
+              <button class="aspect active" data-aspect="SIMPLE">
+                <span class="aspect-dot"></span>
+                <span>SIMPLE</span>
+                <small>FACT / HABIT</small>
+              </button>
+              <button class="aspect" data-aspect="CONTINUOUS">
+                <span class="aspect-dot"></span>
+                <span>CONTINUOUS</span>
+                <small>IN PROGRESS</small>
+              </button>
+              <button class="aspect" data-aspect="PERFECT">
+                <span class="aspect-dot"></span>
+                <span>PERFECT</span>
+                <small>RESULT</small>
+              </button>
+              <button class="aspect" data-aspect="PERFECT CONTINUOUS">
+                <span class="aspect-dot"></span>
+                <span>PERFECT CONTINUOUS</span>
+                <small>DURATION</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="station-marker" id="stationMarker"></div>
         </div>
       </div>
 
-      <aside class="card" id="card">
-        <div class="card-top">
-          <span class="index" id="index">01 / 12</span>
-          <span class="status"><i></i> LOCKED</span>
+      <aside class="info-panel" id="infoPanel">
+        <div class="info-top">
+          <span id="counter">01 / 12</span>
+          <span class="locked"><i></i> STATION LOCKED</span>
         </div>
 
-        <div class="card-content">
-          <p class="kicker" id="category">PRESENT · SIMPLE</p>
+        <div class="info-content">
+          <p class="eyebrow" id="category">PRESENT · SIMPLE</p>
           <h2 id="tenseName">Present Simple</h2>
 
           <div class="formula" id="formula">V / V-s</div>
 
-          <div class="example">
-            <p class="example-text" id="example">Bjorn lives near the forest.</p>
+          <div class="scene">
+            <div class="scene-grid"></div>
+            <div class="window"></div>
+            <div class="floor"></div>
+            <div class="bjorn" id="bjorn">
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="arm arm-left"></div>
+              <div class="arm arm-right"></div>
+              <div class="leg leg-left"></div>
+              <div class="leg leg-right"></div>
+            </div>
+            <div class="scene-caption" id="sceneCaption">EVERY EVENING</div>
+          </div>
+
+          <div class="example-box">
+            <p class="example" id="example">Bjorn lives near the forest.</p>
             <p class="translation" id="translation">Бьйорн живёт возле леса.</p>
           </div>
 
@@ -64,18 +109,18 @@
           </p>
         </div>
 
-        <div class="card-footer">
-          <button class="nav-btn" id="prevBtn" type="button">←</button>
-          <span>Use ← → to explore</span>
-          <button class="nav-btn" id="nextBtn" type="button">→</button>
+        <div class="controls">
+          <button id="prev" class="arrow">←</button>
+          <span>← → EXPLORE</span>
+          <button id="next" class="arrow">→</button>
         </div>
       </aside>
     </section>
 
-    <footer class="footer">
-      <span>12 tenses</span>
+    <footer>
+      <span>12 TENSES</span>
       <span>•</span>
-      <span>one Bjorn</span>
+      <span>ONE BJORN</span>
     </footer>
   </main>
 
