@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Time Machine — Bjorn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ENGLISH TIME MACHINE</p>
+        <h1>Where is Bjorn?</h1>
+      </div>
+      <div class="hint">Drag the point · Release to lock</div>
+    </header>
+
+    <section class="machine">
+      <div class="plane-wrap">
+        <div class="plane" id="plane" aria-label="English tense coordinate plane">
+          <div class="grid"></div>
+
+          <div class="axis axis-x"></div>
+          <div class="axis axis-y"></div>
+
+          <div class="axis-label label-past">PAST</div>
+          <div class="axis-label label-present">PRESENT</div>
+          <div class="axis-label label-future">FUTURE</div>
+
+          <div class="mode-label mode-simple">SIMPLE</div>
+          <div class="mode-label mode-continuous">CONTINUOUS</div>
+          <div class="mode-label mode-perfect">PERFECT</div>
+          <div class="mode-label mode-perfect-continuous">PERFECT<br>CONTINUOUS</div>
+
+          <div class="crosshair" id="crosshair"></div>
+          <button class="orb" id="orb" aria-label="Tense selector">
+            <span></span>
+          </button>
+
+          <div class="coordinate-readout" id="coordinateReadout">PRESENT · SIMPLE</div>
+        </div>
+      </div>
+
+      <aside class="card" id="card">
+        <div class="card-top">
+          <span class="index" id="index">01 / 12</span>
+          <span class="status"><i></i> LOCKED</span>
+        </div>
+
+        <div class="card-content">
+          <p class="kicker" id="category">PRESENT · SIMPLE</p>
+          <h2 id="tenseName">Present Simple</h2>
+
+          <div class="formula" id="formula">V / V-s</div>
+
+          <div class="example">
+            <p class="example-text" id="example">Bjorn lives near the forest.</p>
+            <p class="translation" id="translation">Бьйорн живёт возле леса.</p>
+          </div>
+
+          <p class="description" id="description">
+            A fact, habit, or something that is generally true.
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <button class="nav-btn" id="prevBtn" type="button">←</button>
+          <span>Use ← → to explore</span>
+          <button class="nav-btn" id="nextBtn" type="button">→</button>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>12 tenses</span>
+      <span>•</span>
+      <span>one Bjorn</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
